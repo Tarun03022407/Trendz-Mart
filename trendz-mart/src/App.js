@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './Navbar/Navbar';
 // import Women from './NavbarMiddle/Women';
-import NavbarMiddle from './NavbarMiddle/NavbarMiddle';
+import NavbarMiddle from './Components/NavbarMiddle/NavbarMiddle';
 
 function App() {
   return (
