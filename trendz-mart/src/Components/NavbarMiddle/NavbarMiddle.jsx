@@ -10,8 +10,6 @@ function NavbarMiddle(){
 <Men />
 <Kids />
 <DesignArt />
-
-
 </div>
       
     )

@@ -1,5 +1,6 @@
 import { Stack,Button } from "@chakra-ui/react"
 import { SearchIcon } from "@chakra-ui/icons"
+import logo from "../../images/logo.jpg"
 
 
 function DesignArt(){
@@ -21,7 +22,8 @@ overflow= "hidden"_hover={{backgroundColor:"#fffe94"}} marginLeft={"5px"} fontWe
 
  </Stack  >
 
-     <img  style={{marginLeft:"150px",width:"100px"}} src="https://www.yoox.com/media/yoox16/header/yoox-logo-p.svg" alt="" />
+
+     <img  style={{marginLeft:"150px",width:"150px",marginBottom:"100%"}} src={logo} alt="logo" />
   <div style={{marginLeft:"200px",width:"100px"}}> <SearchIcon /></div>
   <div><img style={{width:"18px",marginTop:"5px",marginLeft:"25px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZ-YAuWzBrjSY-iFZ6Kn8-ItMmC9A3CA86BEgAvA&s" alt="" /></div>
 
