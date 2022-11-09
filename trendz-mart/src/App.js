@@ -1,6 +1,6 @@
 
 import './App.css';
-import Navbar from './Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 // import Women from './NavbarMiddle/Women';
 import NavbarMiddle from './Components/NavbarMiddle/NavbarMiddle';
 
