@@ -1,4 +1,4 @@
-import { Grid, Stack} from "@chakra-ui/react"
+import {  Stack} from "@chakra-ui/react"
 import {ChevronDownIcon} from "@chakra-ui/icons"
 import React from "react"
 import {
@@ -10,14 +10,14 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
-    Tr,
+
     Button
   } from '@chakra-ui/react'
   import axios from "axios"
 
 
 const Country=()=>{
-  const[name,setName]=React.useState("")
+  // const[name,setName]=React.useState("")
     const [data,setData] = React.useState([])
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [scrollBehavior, setScrollBehavior] = React.useState('inside')

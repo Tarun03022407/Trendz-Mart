@@ -23,9 +23,10 @@ overflow= "hidden"_hover={{backgroundColor:"#fffe94"}} marginLeft={"5px"} fontWe
  </Stack  >
 
 
-     <img  style={{marginLeft:"150px",width:"150px",marginBottom:"100%"}} src={logo} alt="logo" />
-  <div style={{marginLeft:"200px",width:"100px"}}> <SearchIcon /></div>
-  <div><img style={{width:"18px",marginTop:"5px",marginLeft:"25px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZ-YAuWzBrjSY-iFZ6Kn8-ItMmC9A3CA86BEgAvA&s" alt="" /></div>
+     <img  style={{marginLeft:"150px",width:"150px",cursor:"pointer",}} src={logo} alt="logo" />
+  <div style={{marginLeft:"200px",width:"130px",cursor:"pointer",marginTop:"10px"}}> <SearchIcon /></div>
+  <div><img style={{width:"18px",marginTop:"15px",marginLeft:"25px",cursor:"pointer"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZ-YAuWzBrjSY-iFZ6Kn8-ItMmC9A3CA86BEgAvA&s" alt="" /></div>
+  <div style={{marginLeft:"70px",cursor:"pointer",marginTop:"10px"}}>🛒</div>
 
  </div>
 
