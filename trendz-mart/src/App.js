@@ -6,6 +6,9 @@ import DownNavbar from './Components/DownNavbar/DownNavbar';
 import ImageCard from './Components/ImageCard/ImageCard';
 import Designer from './Components/Designers/Designers';
 import NewArrivals from './Components/NewArrivals/NewArrivals';
+import HomeCarts from './Components/HomeCarts/HomeCarts';
+import OneOfAKind from './Components/OneOfAKind/OneOfAKind';
+import EightByYoox from './Components/EightByYoox/EightByYoox';
 
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
    <ImageCard />
    <Designer />
    <NewArrivals />
+   <HomeCarts />
+   <OneOfAKind />
+   <EightByYoox />
 
   
 
