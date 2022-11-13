@@ -18,7 +18,7 @@ function ImageCard(){
  src=" https://www.yoox.com/images/yoox80/banners/6824_2_XmasLaunch_WM_Main.jpg?634485886639412096&impolicy=cropDefault&width=960&height=510"
   />
   
-  <div style={{width:"350px" ,height:"120px" ,backgroundColor:"white", position:"absolute" ,top:"32%",right:"70%"  }}>
+  <div style={{width:"350px" ,height:"120px" ,backgroundColor:"white", position:"absolute" ,top:"12%",right:"70%"  }}>
     <Text  fontWeight="bold" fontSize="24px" fontFamily="playfairDisplay,sansSerif" marginRight="120px" >LIGHTS ON!</Text>
     <Text  fontSize="14px"  fontFamily="Montserrat,sans-serif" marginRight="60px" marginTop="10px">Enter To Find The Perfect Present</Text>
     <Text  fontWeight="bold" fontSize="15px" fontFamily="playfairDisplay,sansSerif" cursor="pointer" marginRight="100px" marginTop="10px"><u>LET THE SHOW BEGIN</u></Text>

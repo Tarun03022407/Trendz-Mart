@@ -3,7 +3,8 @@ import { Button,Text } from "@chakra-ui/react"
 function DownNavbar(){
     return (
   
-        <div  style={{width:"100%", height:"40px",backgroundColor:"#333",marginTop:"30px"}}>
+       <div style={{position:"sticky",top:"110px",zIndex:"99"}} >
+         <div  style={{width:"100%", height:"40px",backgroundColor:"#333",marginTop:"30px",position:"sticky"}}>
             <Button colorScheme={"blackAlpha"} backgroundColor={"#333"}><Text color="white"  fontSize='xs'>NEW ARRIVALS</Text></Button>
             <Button colorScheme={"blackAlpha"} backgroundColor={"#333"} ><Text color="white" fontSize='xs'>DESIGNERS</Text></Button>
             <Button colorScheme={"blackAlpha"} backgroundColor={"#333"}><Text color="white" fontSize='xs'>CLOTHING</Text></Button>
@@ -17,8 +18,8 @@ function DownNavbar(){
 
 
 
-
         </div>
+       </div>
             
       
     )

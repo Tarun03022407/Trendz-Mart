@@ -88,7 +88,7 @@ return (
             src="https://www.yoox.com/images/yoox80/banners/6833_1_8byYoox_Special_WM.png?634485886639412096#width=930&height=660"
             />
            </div>
-           <div style={{position:"absolute",bottom:"0.1%",left:"8%",fontSize:"200px",width:"400px",height:"150px",backgroundColor:"white",textAlign:"left"}}>
+           <div style={{position:"absolute",bottom:"25%",left:"7%",fontSize:"200px",width:"400px",height:"150px",backgroundColor:"white",textAlign:"left"}}>
            <Text      display= "block"
     fontSize=" 24px"
     fontWeight="700"

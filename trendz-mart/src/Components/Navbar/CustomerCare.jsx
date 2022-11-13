@@ -1,4 +1,5 @@
 import {  Stack} from "@chakra-ui/react"
+import { NavLink } from "react-router-dom"
 // import {ChevronDownIcon} from "@chakra-ui/icons"
 import React from "react"
 import {
@@ -19,11 +20,13 @@ function CustomerCare(){
     const btnRef = React.useRef(null)
     return(
         <>
-        <Stack  >
-        <Button  display= "inline-block"
+        <Stack >
+      
+     <Button  display= "inline-block"
     maxWidth=" 108px"
     whiteSpace= "nowrap"
-    overflow= "hidden" fontWeight={"bold"}   _hover={{ bg: "blue.500", color: " white"  }}   textOverflow= "ellipsis"  fontSize="12px" background="white" width={"100px"} size={2} mt={3} ref={btnRef} onClick={onOpen}> <u >Customer Care</u>
+    overflow= "hidden" fontWeight={"bold"}   _hover={{ bg: "blue.500", color: " white"  }}   textOverflow= "ellipsis"  fontSize="12px" background="white" width={"100px"} size={2} mt={3} ref={btnRef} onClick={onOpen}> <u >Customer Care</u> 
+       
    
       </Button>
 
@@ -38,11 +41,21 @@ function CustomerCare(){
       >
         <ModalOverlay />
         <ModalContent colorScheme='brand'>
-          <ModalHeader colorScheme='brand'>SHOP IN   <p style={{fontSize:"10px"}}>By changing the location, delivery options of that location will apply and all items will be removed from your Shopping Bag.</p></ModalHeader>
+           {/* <NavLink to='/customerCare'>Customer Care</NavLink>  */}
+          <ModalHeader colorScheme='brand'>CAN WE HELP YOU ??</ModalHeader>
           <ModalCloseButton />
           <ModalBody style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px",cursor:"pointer"}} >
-        s
+        <div style={{width:"300%",height:"30px",backgroundColor:"#333",color:"white",textAlign:"center"}}>GO TO CUSTOMER CARE AREA</div>
           </ModalBody>
+          <ModalBody  _hover={{color:" blue.500"}} style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px",cursor:"pointer"}} >
+        <div style={{textAlign:"center",width:"200%"}}>TRACK YOUR ORDER</div>
+          </ModalBody>
+          <ModalBody  _hover={{color:" blue.500"}} style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px",cursor:"pointer"}} >
+        <div style={{textAlign:"center",width:"200%"}}>COMPLETE THE RETURN FORM</div>
+          </ModalBody> 
+           <ModalBody _hover={{color:" blue.500"}} style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"10px",cursor:"pointer"}} >
+        <div style={{textAlign:"center",width:"200%"}}>TRACK YOUR RETURN</div>
+          </ModalBody> 
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>

@@ -14,6 +14,7 @@ import {
     Button
   } from '@chakra-ui/react'
   import axios from "axios"
+  import { NavLink } from "react-router-dom"
 
 
 const Country=()=>{
@@ -26,20 +27,21 @@ const Country=()=>{
 
     
    return (
-    < div>
+    < div style={{position:"sticky"}}>
     <Stack spacing={10}>
    
 
     {/* <Select border={"none"} width={"150px"} size="sm" iconSize="20px" placeholder='United States'> */}
-    
+  
+        
 
-      <Button marginLeft="100px"  display= "inline-block"
+       <Button marginLeft="100px"  display= "inline-block"
     maxWidth=" 108px"
     whiteSpace= "nowrap"
     _hover={{ bg: "blue.500", color: " white"  }}
     overflow= "hidden" fontWeight={"bold"}   textOverflow= "ellipsis"  fontSize="12px" background="white" width={"70px"} size={2} mt={3} ref={btnRef} onClick={onOpen}>  <u> India </u>
       <ChevronDownIcon marginLeft={"5px"} />
-      </Button>
+      </Button> 
 
       <Modal
       size={"xl"}
