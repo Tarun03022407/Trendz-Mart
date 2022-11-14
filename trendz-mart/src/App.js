@@ -10,7 +10,8 @@ import Register from './Components/Navbar/Register';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Components/Navbar/Login';
 import DownNavbar from "./Components/DownNavbar/DownNavbar"
-
+import SingleProduct from "./Components/OneOfAKind/oneofakindsingle"
+import OneOfAKind from './Components/OneOfAKind/OneOfAKind';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
         <Route path='/Register' element={<Register />} /> 
         <Route path='/Login' element={<Login />} /> 
         {/* <Route path='*' element={<Error/>} />  */}
+        <Route path="/products" element={<SingleProduct/>}/>
+        <Route path="/products/:id" element={<OneOfAKind />}/>
  
       </Routes>
 

@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom"
 import { Button } from "@chakra-ui/react"
 import {UnlockIcon} from "@chakra-ui/icons"
 
+
+
 function Navbar(){
 
 return (
@@ -35,7 +37,8 @@ _hover={{ bg: "blue.500", color: " white"  }}
 overflow= "hidden" fontWeight={"bold"}   textOverflow= "ellipsis"  fontSize="12px" background="white" width={"100px"} size={2} mt={3} >       <u style={{marginLeft:"5px",marginTop:"5px"}} > 🖊️ Register</u>
 
  </Button></NavLink> 
-  
+
+
 </div> 
 
  </div> 

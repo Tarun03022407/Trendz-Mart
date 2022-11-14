@@ -4,7 +4,8 @@ import  Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import "slick-carousel/slick/slick-theme.css";
 import './OneOfAKind.css'
-import {Text ,Link} from "@chakra-ui/react"
+import {Text ,Link, Button} from "@chakra-ui/react"
+import { NavLink } from "react-router-dom";
 
 
 function SampleNextArrow(props) {
@@ -31,7 +32,7 @@ function SampleNextArrow(props) {
 
 function OneOfAKind(){
     const [data,setData] = React.useState([])
-    axios.get("https://sky-nice-feet.glitch.me/oneofakind").then((res)=>setData(res.data))
+    axios.get("https://mock-server-app-fx5c.onrender.com/oneofakind").then((res)=>setData(res.data))
 
     const settings = {
         dots: true,
@@ -75,7 +76,7 @@ function OneOfAKind(){
           }
         ]
       };
-    return(
+    return (
     
         <div className="oneofakind">
         <div>
@@ -85,9 +86,12 @@ function OneOfAKind(){
         <br />
         <Link>VIEW ALL</Link>
         <Slider style={{marginTop:"100px"}}  {...settings} >
-        {data.map((el,id)=>
-        <div  key={el.id}  className="card">
-           <div className="card-top">
+        {data?.map((el,id)=>
+                  <NavLink style={{textDecoration:"none"}} to={`/products/${el.id}`}>
+        <div  key={data.id}  className="card">
+
+   <div  className="card-top">
+   
            <img  src={el.url} alt="product-image" />
            <Text marginTop="20px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >{el.brand}</Text>
            <Text fontSize="13px" marginTop="15px"  fontFamily="Montserrat,sansSerif"  >{el.title}</Text>
@@ -95,10 +99,12 @@ function OneOfAKind(){
           
            <Text   fontSize="15px" marginTop="15px"  fontFamily="Montserrat,sansSerif" >{el.offer}</Text>
               <Text marginTop="5px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >$ {el.price}</Text>
-             
+             {/* <div key={el.id}><Button>View Products</Button></div> */}
               </div>
+              
+           
           
-        </div>
+        </div> </NavLink> 
          
         )}
          </Slider>

@@ -1,189 +1,83 @@
-import { UnlockIcon } from "@chakra-ui/icons"
-import { Button,Stack } from "@chakra-ui/react"
-import { NavLink } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
-import { useState } from "react"
-const Login=()=>{
-  const[pin,setPin]=useState(""); 
-  const [loading, setLoading] = useState(false); 
-const navigate=useNavigate(); 
-   
- 
-  const handleSubmit= (e) =>{ 
-    e.preventDefault(); 
-    setLoading(true) 
-    alert("login successfull") 
- 
- 
- 
- 
-  }  
-    return (
-        <div> 
-               <form action="" style={{width:"400px",height:"100px",margin:"50px 0px 50px 500px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}> 
-                <div> 
-                 <lable > 
-                 <h2 style={{backgroundColor:"blue",marginBottom:"30px" }} >Login</h2> 
-                 <input   
-             value={pin}  
-                onChange={(e) => setPin(e.target.value)} 
-                 type="number" placeholder="Enter Your mobile number"/> 
-                </lable> 
-                <button data-testid="form-submit" type="submit">Procced</button> 
-                </div> 
-              </form> 
-            </div> 
+import {useContext,useState} from 'react'
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from '../Context/AuthContext';
+import { Stack,Button,Text,Link,Image, Input  ,Checkbox,CheckboxGroup} from "@chakra-ui/react"
+function Login() {
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("")
+  const [loading,setLoading] = useState(false)
+  const {loginUser,authState} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    setLoading(true);
+    fetch("https://reqres.in/api/login",{
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify({email,password}),
+    })
+    .then((res)=>res.json())
+    .then((res)=>{
+      if(res.token){
+        loginUser(res.token);
+        alert("Login Successful")
+        navigate("/")
+      }
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+  return (
+    <div>
+    <Stack  >
+<Text fontFamily="Montserrat,sansSerif" fontWeight="700" fontSize="1.125rem" marginBlockStart="0.83em" marginBlockEnd="0.83em" wordBreak="break-word"> MYTRENDZ</Text>
+<Text marginBottom="10px" fontWeight="500" fontFamily="Montserrat,sansSerif" fontSize="0.825rem" >Login</Text>
 
-    )
+<Text fontFamily="Montserrat,sansSerif"  >LOGIN WITH YOUR SOCIAL MEDIA ACCOUNT</Text>
+
+<div style={{height:"46px",margin:"auto" , marginTop:"30px",  textAlign:"center",color:"white", width:"400px", background:"#3b5998" }} > <Link href="https://www.facebook.com"> <Text fontSize="30px">f</Text></Link></div>
+<div style={{height:"46px",margin:"auto",marginTop:"30px", width:"400px" ,  alignItems:"center" ,justifyContent:"center",boxShadow:"1px 1px 1px 1px" }} >   <Link href="https://www.google.com"> <Image marginTop="10px" marginLeft="47%" src="https://www.yoox.com/media/yoox16/icons/google_24.png" /></Link></div>
+
+<div style={{margin:"46px 0 8px",width:"40%",justifyContent:"center",margin:"auto",marginTop:"50px",gap:"30px"}}>
+<Text fontSize=".875rem" fontWeight="500" fontFamily="Montserrat,sansSerif" >OR WITH YOUR EMAIL</Text>
+<Input value={email} type="email"  onChange={(e)=>setEmail(e.target.value)} marginTop="20px"  placeholder="E-MAIL*" />
+<Input value={password} type="password"  onChange={(e)=>setPassword(e.target.value)} marginTop="20px"  placeholder="PASSWORD*" />
+</div>
+
+<Text fontSize=".875rem" fontWeight="500" fontFamily="Montserrat,sansSerif" style={{marginTop:"30px",marginRight:"270px"}} >Personalise your Shopping experience</Text>
+
+<div style={{marginLeft:"30%"}}>
+<CheckboxGroup colorScheme='blackAlpha' defaultValue={['naruto', 'kakashi']}>
+<Stack spacing={[1, 5]} direction={['column', 'row']}>
+<Checkbox value='REMEMBER-ME'>REMEMBER ME</Checkbox>
+
+
+</Stack>
+</CheckboxGroup>
+</div>
+
+
+
+
+
+
+<div style={{marginTop:"30px", width:"40%",margin:"auto"}}><Button  onClick={handleSubmit} marginTop={"30px"} >LOGIN</Button></div>
+
+<div style={{width:"100%",height:"100px" ,backgroundColor:"#333" , marginTop:"80px", color:"white",textAlign:"center",fontFamily:"Montserrat,sansSerif",fontSize:".778rem",alignItems:"center",alignContent:"center"}}>
+           <Text marginTop="40px">POWERED BY YOOX NET-A-PORTER GROUP - COPYRIGHT © 2000-2022 YOOX NET-A-PORTER GROUP S.P.A. - ALL RIGHTS RESERVED - SIAE LICENCE # 401/I/526</Text>
+           <div style={{display:"flex",gap:"40px",justifyContent:"center",marginTop:'40px'}}>
+           <Link>LEGAL AREA</Link>
+           <Link>PRIVACY POLICY</Link>
+
+       </div>
+
+       </div>
+
+</Stack  >
+</div>
+  );
 }
-export default Login
-
-
-
-// import { useContext } from "react"; 
-// import { useState } from "react"; 
-// import { Link, useNavigate } from "react-router-dom"; 
- 
-// function Login() { 
-//   const [email, setEmail] = useState(""); 
-//   const[name,setName]=useState("") 
-//   const[last,setLast]=useState("") 
-//   const[number,setNumber]=useState("") 
-//   const [loading, setLoading] = useState(false); 
-//   // const { loginUser, authState } = useContext(AppContext); 
-//   const navigate = useNavigate(); 
-//   const handleSubmit = (e) => { 
-//     e.preventDefault(); 
-//     setLoading(true); 
-//     console.log(name); 
-//     if(name!=="" && email!=="" && last!=="" && number!==""){ 
-//       alert("SignUp succssfull") 
-//     }else{ 
-//       alert('Fill details'); 
-//     } 
-//   }; 
-//   return ( 
-//     <div className="login-page" style={{width:"40%",height:"350px" ,margin:"auto",margin:"100px 0px 50px 400px",gap:"50px",boxShadow:" rgba(0, 0, 0, 0.24) 0px 3px 8px"}}> 
-//       <form onSubmit={handleSubmit} className="form" data-testid="login-form" style={{gap:"50px"}}> 
-        
-//         <div style={{width:"90%",heigth:"850px",margin:"auto"}}>  
-//        <div> 
-//           <h2>Register New Account</h2> 
-//           <label> 
-//           <h5 style={{marginRight:"70%"}}>First Name</h5> 
-//             <input 
-//               value={name} 
-//               onChange={(e) => setName(e.target.value)} 
-//               // data-testid="email-input" 
-//               type="text" 
-//               placeholder="Name" style={{width:"480px",height:"30px"}} 
-//             /> 
-//           </label> 
-//         </div> 
-//         <div> 
-//           <label> 
-//           <h5 style={{marginRight:"70%"}}>Last Name</h5> 
- 
-//             <input 
-//               value={last} 
-//               onChange={(e) => setLast(e.target.value)} 
-//               // data-testid="email-input" 
-//               type="text" 
-//               placeholder="Last  name" style={{width:"480px",height:"30px"}} 
-//             /> 
-//           </label> 
-//         </div> 
-//         <div> 
-//           <label> 
-//           <h5 style={{marginRight:"70%"}}>Email Address</h5> 
- 
-                 
-//                <input 
-//               value={email} 
-//               onChange={(e) => setEmail(e.target.value)} 
-//               // data-testid="email-input" 
-//               type="email" 
-//               placeholder="email" style={{width:"480px",height:"30px"}} 
-//             /> 
-//           </label> 
-//         </div> 
-        
-//         <div> 
-//           <label> 
-//           <h5 style={{marginRight:"70%"}}> Phone Number</h5> 
- 
-//             <input 
-//               value={number} 
-//               onChange={(e) => setNumber(e.target.value)} 
-//               // data-testid="email-input" 
-//               type="number" 
-//               placeholder="Phone Number" style={{width:"480px",height:"30px"}} 
-//             /> 
-//             <p style={{color:"grey"}}>Your mobile number will be used avail benefits such as joi Mart Cashback and ROne points</p> 
-//           </label> 
-//         </div> 
-//           </div> 
-         
- 
-        
-        
-//         <div> 
-//           <button disabled={loading} data-testid="form-submit" type="submit"> 
-//             SUBMIT 
-//           </button> 
-//           <p>AllReady Account?<a href="Logins">LOGIN</a></p> 
-//         </div> 
-//       </form> 
-       
-//     </div> 
-//   ); 
-// } 
-// export default Login;
-
-// import React from 'react' 
-// import { useState } from 'react' 
-// import { Link, useNavigate } from "react-router-dom"; 
- 
- 
- 
- 
- 
- 
- 
-// const Login = () => { 
- 
-//   const[pin,setPin]=useState(""); 
-//   const [loading, setLoading] = useState(false); 
-// const navigate=useNavigate(); 
-   
- 
-//   const handleSubmit= (e) =>{ 
-//     e.preventDefault(); 
-//     setLoading(true) 
-//     alert("login successfull") 
- 
- 
- 
- 
-//   } 
- 
- 
-//   return ( 
-//     <div> 
-//       <form action="" style={{width:"400px",height:"100px",margin:"50px 0px 50px 500px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}> 
-//        <div> 
-//         <lable > 
-//         <h2 style={{backgroundColor:"blue",marginBottom:"30px" }} >Login</h2> 
-//         <input   
-//         value={pin}  
-//         onChange={(e) => setPin(e.target.value)} 
-//          type="number" placeholder="Enter Your mobile number"/> 
-//         </lable> 
-//         <button data-testid="form-submit" type="submit">Procced</button> 
-//         </div> 
-//       </form> 
-//     </div> 
-//   ) 
-// } 
- 
-// export default Login
+export default Login;

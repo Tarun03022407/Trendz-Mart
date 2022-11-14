@@ -31,7 +31,7 @@ function SampleNextArrow(props) {
 
 function  NewArrivals(){
    const [data,setData] = React.useState([])
-   axios.get("https://curly-aromatic-dracopelta.glitch.me/newArrivals").then((res)=>setData(res.data))
+   axios.get("https://mock-server-app-fx5c.onrender.com/newArrivals").then((res)=>setData(res.data))
   const settings = {
       dots: true,
       infinite: false,
@@ -85,8 +85,10 @@ function  NewArrivals(){
          <Link>VIEW ALL</Link>
          <Slider style={{marginTop:"100px"}}  {...settings} >
          {data.map((el,id)=>
-         <div   key={el.id}  className="card">
-            <div className="card-top">
+
+     <div   key={el.id}  className="card">
+      <Link to={`product/${el.id}`}>
+            <div key={el.id} className="card-top">
             <img  src={el.url} alt="product-image" />
             <Text marginTop="20px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >{el.brand}</Text>
             <Text fontSize="13px" marginTop="15px"  fontFamily="Montserrat,sansSerif"  >{el.title}</Text>
@@ -95,8 +97,8 @@ function  NewArrivals(){
             <Text   fontSize="15px" marginTop="15px"  fontFamily="Montserrat,sansSerif" >{el.offer}</Text>
                <Text marginTop="5px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >$ {el.price}</Text>
               
-               </div>
-           
+               </div>  </Link>
+         
          </div>
           
          )}

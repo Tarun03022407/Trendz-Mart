@@ -33,7 +33,7 @@ function SampleNextArrow(props) {
 function EightByYoox(){
 
     const [data,setData] = React.useState([])
-    axios.get("https://capable-spurious-list.glitch.me/eightbyyoox").then((res)=>setData(res.data))
+    axios.get("https://mock-server-app-fx5c.onrender.com/eightbyyoox").then((res)=>setData(res.data))
 
     const settings = {
         dots: false,
@@ -119,14 +119,15 @@ return (
         <Slider style={{marginTop:"100px"}}  {...settings} >
         {data.map((el,id)=>
         <div  key={el.id}  className="card">
-           <div  className="card-top">
+          <Link to={`product/${el.id}`} >
+           <div key={el.id}  className="card-top">
            <img  src={el.url} alt="product-image" />
            <Text marginTop="30px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >{el.brand}</Text>
            <Text fontSize="13px" marginTop="20px"  fontFamily="Montserrat,sansSerif"  >{el.title}</Text>
               <Text marginTop="10px" fontFamily="Montserrat,sansSerif" fontSize="15px" lineHeight="15px" fontWeight="bold"  >$ {el.price}</Text>
              
               </div>
-          
+              </Link>
         </div>
          
         )}
